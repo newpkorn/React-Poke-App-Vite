@@ -17,7 +17,6 @@ function App() {
     let abortController = new AbortController();
 
     const loadPoke = async () => {
-      setLoading(true);
       try {
         let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeId}`, {
           signal: abortController.signal

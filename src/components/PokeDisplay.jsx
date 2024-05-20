@@ -8,17 +8,19 @@ function PokeDisplay(props) {
                 <ReactLoading type='spin' color='black' height={'20%'} width={'20%'} />
                 :
                 <>
-                    <h1>{poke?.name}</h1>
+                    <h1 className='mb-5'>{poke?.name}</h1>
                     <button onClick={addFav}>Add to favourite</button>
                     <br />
                     <img src={poke?.sprites?.other?.home?.front_default} alt={poke?.name} />
-                    <ul>
+                    <ul className='mb-5'>
                         {poke?.abilities?.map((abil, idx) => (
                             <li key={idx}>{abil.ability.name}</li>
                         ))}
                     </ul>
-                    <button onClick={prevPoke}>Previous</button>
-                    <button onClick={nextPoke}>Next</button>
+                    <div className='flex justify-center gap-2'>
+                        <button onClick={prevPoke}>Previous</button>
+                        <button onClick={nextPoke}>Next</button>
+                    </div>
                 </>
             }
         </div>
